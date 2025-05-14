@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>You Are An Idiot!</title>
+  <title>Formulaire sécurisé</title>
   <link rel="stylesheet" href="idiot.css">
 </head>
 <body>
-  <div id="container">
+  <div id="landing">
+    <h1>Cliquez afin d'accéder au formulaire</h1>
+    <button id="start-btn">Accéder</button>
+  </div>
+
+  <div id="prank" style="display: none;">
     <img src="idiot.png" alt="You Are An Idiot!" id="idiot-img">
   </div>
-  <audio autoplay loop>
+
+  <audio id="idiot-audio" loop>
     <source src="audio/idiot.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    Votre navigateur ne supporte pas l'audio.
   </audio>
+
   <script src="idiot.js"></script>
 </body>
 </html>
