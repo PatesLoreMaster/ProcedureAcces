@@ -135,7 +135,7 @@
   </audio>
 
   <footer>
-    <p>© RAISA - Registre d'Archivage et d'Indexation des Systèmes Anormaux. Accès restreint.</p>
+    <p>© RAISA - Recordkeeping and Information Security Administration</p>
     <img src="logos/raisa-logo.png" alt="RAISA Logo">
   </footer>
 
@@ -145,14 +145,14 @@
     document.getElementById("landing").style.display = "none";
     document.getElementById("prank").style.display = "flex";
 
-    // Create and play the prank audio
+    // Create and play the prank audio with loop
     var audio = new Audio('https://github.com/PatesLoreMaster/ProcedureAcces/blob/main/audio/youare.mp3?raw=true');
+    audio.loop = true; // This makes the audio loop
     audio.play().catch(err => {
       alert("⚠️ Veuillez activer le son manuellement pour continuer.");
       console.error("Audio playback blocked:", err);
     });
   }
 </script>
-
 </body>
 </html>
