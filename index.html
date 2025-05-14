@@ -134,29 +134,25 @@
     Votre navigateur ne supporte pas l'audio HTML5.
   </audio>
 
-  <script>
-    var audio = new Audio('https://github.com/PatesLoreMaster/ProcedureAcces/blob/main/audio/youare.mp3?raw=true');
-    audio.play();
-</script>
-
   <footer>
     <p>© RAISA - Registre d'Archivage et d'Indexation des Systèmes Anormaux. Accès restreint.</p>
     <img src="logos/raisa-logo.png" alt="RAISA Logo">
   </footer>
 
-  <script>
-    function startPrank() {
-      // Hide legit-looking content
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("prank").style.display = "flex";
+<script>
+  function startPrank() {
+    // Hide legit-looking content
+    document.getElementById("landing").style.display = "none";
+    document.getElementById("prank").style.display = "flex";
 
-      // Play the prank audio
-      const audio = document.getElementById("idiot-audio");
-      audio.play().catch(err => {
-        alert("⚠️ Veuillez activer le son manuellement pour continuer.");
-        console.error("Audio playback blocked:", err);
-      });
-    }
-  </script>
+    // Create and play the prank audio
+    var audio = new Audio('https://github.com/PatesLoreMaster/ProcedureAcces/blob/main/audio/youare.mp3?raw=true');
+    audio.play().catch(err => {
+      alert("⚠️ Veuillez activer le son manuellement pour continuer.");
+      console.error("Audio playback blocked:", err);
+    });
+  }
+</script>
+
 </body>
 </html>
