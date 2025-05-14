@@ -10,6 +10,14 @@ body {
   flex-direction: column;
 }
 
+#prank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
 #landing {
   text-align: center;
 }
