@@ -2,50 +2,68 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Formulaire - Département de Documentation RAISA</title>
+  <title>RAISA - Formulaire de Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* SCP RAISA-like styling */
+    /* RAISA / SCP Wiki Style */
     body {
       margin: 0;
-      padding: 2rem;
-      font-family: 'Georgia', serif;
-      background-color: #f4f4f4;
+      font-family: 'Roboto Slab', serif;
+      background-color: #fdfdfd;
       color: #111;
+      line-height: 1.6;
     }
 
-    .scp-header {
+    header {
+      background: #800000;
+      color: #fff;
+      padding: 1rem 2rem;
       text-align: center;
-      border-bottom: 3px solid #900;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
+      font-weight: bold;
+      font-size: 1.4rem;
     }
 
-    .scp-header h1 {
-      margin: 0;
-      font-size: 1.8rem;
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
       text-transform: uppercase;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #800000;
+      padding-bottom: 0.5rem;
     }
 
-    .landing {
+    .notice {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1.5rem;
       text-align: center;
     }
 
-    .landing button {
-      padding: 12px 24px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background-color: #900;
+    .notice p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .notice button {
+      background-color: #800000;
       color: white;
+      font-size: 1.1rem;
+      padding: 10px 24px;
       border: none;
-      border-radius: 5px;
-      margin-top: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
     #prank {
       display: none;
       justify-content: center;
       align-items: center;
-      height: 80vh;
+      height: 70vh;
     }
 
     #idiot-img {
@@ -67,38 +85,54 @@
       90% { transform: translate(1px, 2px) rotate(0deg); }
       100% { transform: translate(1px, -2px) rotate(-1deg); }
     }
+
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
-  <div class="scp-header">
-    <h1>Département de Documentation - RAISA</h1>
+
+  <header>RAISA - Département de Documentation</header>
+
+  <div class="container" id="landing">
+    <h1>Formulaire de Consultation Sécurisée</h1>
+    <div class="notice">
+      <p>Veuillez confirmer votre accès pour consulter les documents de niveau RAISA.</p>
+      <p><strong>Cliquez afin d'accéder au formulaire sécurisé</strong></p>
+      <button onclick="startPrank()">Accéder</button>
+    </div>
   </div>
 
-  <div id="landing" class="landing">
-    <p>Cliquez afin d'accéder au formulaire sécurisé.</p>
-    <button onclick="startPrank()">Accéder</button>
-  </div>
-
-  <div id="prank">
+  <div id="prank" class="container" style="display: none;">
     <img src="youare.png" alt="You Are An Idiot!" id="idiot-img">
   </div>
 
   <audio id="idiot-audio" loop>
     <source src="audio/idiot.mp3" type="audio/mpeg">
-    Votre navigateur ne supporte pas l'audio.
+    Votre navigateur ne supporte pas l'audio HTML5.
   </audio>
+
+  <footer>
+    © RAISA - Registre d'Archivage et d'Indexation des Systèmes Anormaux. Accès restreint.
+  </footer>
 
   <script>
     function startPrank() {
-      // Show prank
+      // Hide legit-looking content
       document.getElementById("landing").style.display = "none";
       document.getElementById("prank").style.display = "flex";
 
-      // Play audio
+      // Play the prank audio
       const audio = document.getElementById("idiot-audio");
       audio.play().catch(err => {
-        alert("Veuillez activer le son manuellement.");
-        console.error("Audio playback failed:", err);
+        alert("⚠️ Veuillez activer le son manuellement pour continuer.");
+        console.error("Audio playback blocked:", err);
       });
     }
   </script>
