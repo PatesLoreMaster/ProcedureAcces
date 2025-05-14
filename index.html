@@ -67,12 +67,15 @@
       cursor: pointer;
     }
 
-    #prank {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      height: 70vh;
-    }
+ #prank {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;     /* Center horizontally */
+  justify-content: center; /* Center vertically (optional) */
+  text-align: center;
+  gap: 1rem;                /* Adds spacing between elements */
+}
+
 
     #idiot-img {
       width: 80%;
@@ -127,11 +130,11 @@
 
 <div id="prank" style="display: none;">
   <img src="idiot.png" alt="You Are An Idiot!" id="idiot-img">
-  <p>Votre signal a été enregistré par le système OBSIDIAN, Vous êtes maintenant recherché par nos services.</p>
+    <p>[Votre signal a été enregistré par le système OBSIDIAN, Vous êtes maintenant recherché par nos services.]</p>
+
 </div>
 
-
-
+  
   <audio id="idiot-audio" loop>
     <source src="audio/idiot.mp3" type="audio/mpeg">
     Votre navigateur ne supporte pas l'audio HTML5.
