@@ -21,6 +21,14 @@
       text-align: center;
       font-weight: bold;
       font-size: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 50px;
+      height: auto;
     }
 
     .container {
@@ -94,11 +102,19 @@
       text-align: center;
       border-top: 1px solid #ddd;
     }
+
+    footer img {
+      width: 30px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
-  <header>RAISA - Département de Documentation</header>
+  <header>
+    <img src="logos/scp-logo.png" alt="SCP Foundation Logo">
+    <span>RAISA - Département de Documentation</span>
+  </header>
 
   <div class="container" id="landing">
     <h1>Formulaire de Consultation Sécurisée</h1>
@@ -110,7 +126,7 @@
   </div>
 
   <div id="prank" class="container" style="display: none;">
-    <img src="idiot.png" alt="You Are An Idiot!" id="idiot-img">
+    <img src="https://youareanidiot.cc/images/youare.png" alt="You Are An Idiot!" id="idiot-img">
   </div>
 
   <audio id="idiot-audio" loop>
@@ -119,7 +135,8 @@
   </audio>
 
   <footer>
-    © RAISA - Recordkeeping and Information Security Administration. Accès restreint.
+    <p>© RAISA - Registre d'Archivage et d'Indexation des Systèmes Anormaux. Accès restreint.</p>
+    <img src="logos/raisa-logo.png" alt="RAISA Logo">
   </footer>
 
   <script>
