@@ -2,40 +2,50 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Formulaire sécurisé</title>
+  <title>Formulaire - Département de Documentation RAISA</title>
   <style>
+    /* SCP RAISA-like styling */
     body {
-      background-color: black;
       margin: 0;
-      font-family: sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
+      padding: 2rem;
+      font-family: 'Georgia', serif;
+      background-color: #f4f4f4;
+      color: #111;
     }
 
-    #landing {
+    .scp-header {
+      text-align: center;
+      border-bottom: 3px solid #900;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .scp-header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .landing {
       text-align: center;
     }
 
-    button {
-      padding: 10px 20px;
+    .landing button {
+      padding: 12px 24px;
       font-size: 1.2rem;
       cursor: pointer;
-      background-color: white;
-      color: black;
+      background-color: #900;
+      color: white;
       border: none;
-      border-radius: 8px;
-      margin-top: 20px;
+      border-radius: 5px;
+      margin-top: 1rem;
     }
 
     #prank {
       display: none;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      height: 80vh;
     }
 
     #idiot-img {
@@ -60,10 +70,37 @@
   </style>
 </head>
 <body>
-  <div id="landing">
-    <h1>Cliquez afin d'accéder au formulaire</h1>
+  <div class="scp-header">
+    <h1>Département de Documentation - RAISA</h1>
+  </div>
+
+  <div id="landing" class="landing">
+    <p>Cliquez afin d'accéder au formulaire sécurisé.</p>
     <button onclick="startPrank()">Accéder</button>
   </div>
 
   <div id="prank">
-    <img src="https://youareanidiot.cc/images/youare
+    <img src="https://youareanidiot.cc/images/youare.png" alt="You Are An Idiot!" id="idiot-img">
+  </div>
+
+  <audio id="idiot-audio" loop>
+    <source src="audio/idiot.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
+  <script>
+    function startPrank() {
+      // Show prank
+      document.getElementById("landing").style.display = "none";
+      document.getElementById("prank").style.display = "flex";
+
+      // Play audio
+      const audio = document.getElementById("idiot-audio");
+      audio.play().catch(err => {
+        alert("Veuillez activer le son manuellement.");
+        console.error("Audio playback failed:", err);
+      });
+    }
+  </script>
+</body>
+</html>
