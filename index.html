@@ -2,43 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>You're an Idiot</title>
-  <style>
-    body {
-      background-color: black;
-      overflow: hidden;
-      margin: 0;
-    }
-    .smiley {
-      position: absolute;
-      font-size: 50px;
-      color: yellow;
-      animation: flash 0.5s infinite;
-    }
-    @keyframes flash {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-  </style>
+  <title>You Are an Idiot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <audio autoplay loop>
-    <source src="youreanidiot.mp3" type="audio/mpeg">
+    <source src="youare.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <script>
-    const smiley = '😂';
-    for (let i = 0; i < 20; i++) {
-      const el = document.createElement('div');
-      el.className = 'smiley';
-      el.innerText = smiley;
-      el.style.left = Math.random() * 100 + 'vw';
-      el.style.top = Math.random() * 100 + 'vh';
-      el.style.fontSize = (30 + Math.random() * 70) + 'px';
-      document.body.appendChild(el);
-    }
-  </script>
+  <div id="smiley-container"></div>
+
+  <script src="main.js"></script>
 </body>
 </html>
